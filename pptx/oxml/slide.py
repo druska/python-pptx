@@ -87,6 +87,7 @@ class CT_Slide(_BaseSlideElement):
     )
     cSld = OneAndOnlyOne('p:cSld')
     clrMapOvr = ZeroOrOne('p:clrMapOvr', successors=_tag_seq[2:])
+    timing = OneAndOnlyOne('p:timing')
     del _tag_seq
 
     @classmethod
@@ -113,6 +114,9 @@ class CT_Slide(_BaseSlideElement):
             '  <p:clrMapOvr>\n'
             '    <a:masterClrMapping/>\n'
             '  </p:clrMapOvr>\n'
+            '  <p:timing>\n'
+            '    <p:tnLst/>\n'
+            '  </p:timing>\n'
             '</p:sld>' % nsdecls('a', 'p', 'r')
         )
 
